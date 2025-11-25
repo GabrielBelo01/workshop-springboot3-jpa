@@ -1,7 +1,7 @@
 package com.projeto.spring.aula.curso.services;
 
-import com.projeto.spring.aula.curso.entities.Category;
-import com.projeto.spring.aula.curso.repositories.CategoryRepository;
+import com.projeto.spring.aula.curso.entities.Product;
+import com.projeto.spring.aula.curso.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,18 +9,18 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CategoryService {
+public class ProductService {
 
 
     @Autowired
-    private CategoryRepository repository;
+    private ProductRepository repository;
 
-    public List<Category> findAll(){
+    public List<Product> findAll(){
         return repository.findAll();
     }
 
-    public Category findById(Long id){
-       Optional<Category> obj = repository.findById(id);
+    public Product findById(Long id){
+       Optional<Product> obj = repository.findById(id);
        return obj.get();
     }
 }
